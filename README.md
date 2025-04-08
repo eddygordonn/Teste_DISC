@@ -25,4 +25,4 @@ Um teste de perfil comportamental DISC completo e interativo, com geração de r
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/eddygordonn/teste-disc.git
+git clone https://github.com/eddygordonn/Teste_DISC.git
