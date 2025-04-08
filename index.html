@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste DISC Interativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="contentToPrint">
+        <img src="https://img.freepik.com/vetores-gratis/fundo-abstrato-azul-com-formas-geometricas_53876-140885.jpg" alt="Teste DISC" class="banner">
+        <h1>Teste de Perfil Comportamental DISC</h1>
+        
+        <div class="info-box">
+            <h3>Como responder:</h3>
+            <p>Para cada afirmação, selecione o número que melhor descreve como você se comporta:</p>
+            <div class="escala">
+                <span>1 = Pouco característico</span>
+                <span>2 = Às vezes</span>
+                <span>3 = Frequentemente</span>
+                <span>4 = Muito característico</span>
+            </div>
+        </div>
+
+        <form id="discForm">
+            <!-- Grupo D (Dominância) -->
+            <div class="question">
+                <label>1. Autoconfiante</label>
+                <select name="q1" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>2. Independente</label>
+                <select name="q2" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>3. Dominante</label>
+                <select name="q3" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <!-- Grupo I (Influência) -->
+            <div class="question">
+                <label>4. Comunicativo</label>
+                <select name="q4" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>5. Alegre</label>
+                <select name="q5" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>6. Extrovertido</label>
+                <select name="q6" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <!-- Grupo S (Estabilidade) -->
+            <div class="question">
+                <label>7. Acolhedor</label>
+                <select name="q7" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>8. Amigável</label>
+                <select name="q8" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>9. Paciente</label>
+                <select name="q9" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <!-- Grupo C (Conformidade) -->
+            <div class="question">
+                <label>10. Autodisciplinado</label>
+                <select name="q10" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>11. Atento a detalhes</label>
+                <select name="q11" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>12. Diligente</label>
+                <select name="q12" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <button type="button" id="btnResultado" onclick="calcularResultado()" disabled>Ver Resultado</button>
+        </form>
+        <div id="resultado"></div>
+        <div id="grafico-container">
+            <canvas id="grafico"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
